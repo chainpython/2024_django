@@ -1,0 +1,47 @@
+<!-- myapp/templates/iframe_page.html -->
+{% extends "base.html" %}
+
+{% block title %}
+UTM to Lat/Long Conversion
+{% endblock %}
+
+{% block content %}
+<div class="iframe-container">
+    <iframe src="https://landsmaps.dol.go.th/" title="Lands Maps"></iframe>
+</div>
+<div class="form-container">
+    <div class="form-content">
+        <form id="conversion-form">
+            <h2>UTM to Lat/Long Conversion</h2>
+            <div>
+                <label for="utm_x">UTM X:</label>
+                <input type="number" id="utm_x" name="utm_x" required>
+            </div>
+            <div>
+                <label for="utm_y">UTM Y:</label>
+                <input type="number" id="utm_y" name="utm_y" required>
+            </div>
+            <div>
+                <label for="zone_number">Zone Number:</label>
+                <input type="number" id="zone_number" name="zone_number" required>
+            </div>
+            <div>
+                <label for="hemisphere">Hemisphere (N/S):</label>
+                <select id="hemisphere" name="hemisphere" required>
+                    <option value="N">Northern</option>
+                    <option value="S">Southern</option>
+                </select>
+            </div>
+            <div>
+                <label for="latitude">Latitude:</label>
+                <input type="text" id="latitude" name="latitude" readonly>
+            </div>
+            <div>
+                <label for="longitude">Longitude:</label>
+                <input type="text" id="longitude" name="longitude" readonly>
+            </div>
+            <button type="button" onclick="convertUTM()">Convert</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,29 @@
+<!-- myapp/templates/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Site{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <header>
+        <!-- Common header content here -->
+        <h1>My Site Header</h1>
+    </header>
+    
+    <div class="content">
+        {% block content %}
+        <!-- Page-specific content will go here -->
+        {% endblock %}
+    </div>
+    
+    <footer>
+        <!-- Common footer content here -->
+        <p>&copy; 2024 My Site</p>
+    </footer>
+    
+    <script src="{% static 'scripts.js' %}"></script>
+</body>
+</html>
